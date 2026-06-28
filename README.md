@@ -10,15 +10,11 @@
   <a href="https://github.com/onury/nestjs-jwt-guard/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="license" /></a>
 </p>
 
-**Passport-free** bearer-token authentication for [NestJS](https://nestjs.com), built on the
-official [`@nestjs/jwt`](https://github.com/nestjs/jwt): a configurable guard, `@Public()`,
-and a token-issuance helper — wired with a single `forRoot()`.
+**Passport-free** bearer-token authentication for [NestJS](https://nestjs.com), built on the official [`@nestjs/jwt`](https://github.com/nestjs/jwt): a configurable guard, `@Public()`, and a token-issuance helper — wired with a single `forRoot()`.
 
 > **ESM-only.** Requires Node ≥ 20 and NestJS 10 / 11.
 >
-> This is the **bearer-token** half (verify + issue). For username/password login
-> (user lookup + password hashing), pair it with the token-agnostic credentials companion
-> (`nestjs-credentials`).
+> This is the **bearer-token** half (verify + issue). For username/password login (user lookup + password hashing), pair it with the token-agnostic credentials companion (`nestjs-credentials`).
 
 ## Install
 
@@ -105,7 +101,7 @@ JwtAuthModule.forRoot({
 ```
 
 | Option | Default | Description |
-|--------|---------|-------------|
+| --- | --- | --- |
 | `jwt` | — | `@nestjs/jwt` config, passed to `JwtModule.register` (required) |
 | `getToken` | `Bearer` header | Extract the raw token from the request |
 | `validate` | identity | Map/validate the decoded payload into the principal; return `null`/`undefined` ⇒ 401, or throw your own error |
@@ -114,13 +110,11 @@ JwtAuthModule.forRoot({
 | `registerGuard` | `true` | Register the guard globally via `APP_GUARD` |
 | `isGlobal` | `true` | Register the module globally |
 
-`validate` runs **outside** the verify try/catch, so a custom validator can throw its own
-(non-401) error and have it propagate untouched.
+`validate` runs **outside** the verify try/catch, so a custom validator can throw its own (non-401) error and have it propagate untouched.
 
 ## Per-route use
 
-Disable the global guard (`registerGuard: false`) and apply per-controller instead — the
-guard and `JwtService` are exported:
+Disable the global guard (`registerGuard: false`) and apply per-controller instead — the guard and `JwtService` are exported:
 
 ```ts
 @UseGuards(JwtAuthGuard)
@@ -133,14 +127,14 @@ export class AdminController {}
 **Module**
 
 | Export | Description |
-|--------|-------------|
+| --- | --- |
 | `JwtAuthModule.forRoot(options)` | Configure `@nestjs/jwt` (via `jwt`) + the guard synchronously. See [Configuration](#configuration). |
 | `JwtAuthModule.forRootAsync(options)` | Build the `@nestjs/jwt` config from injected deps (`useFactory`). |
 
 **Enforcement & issuance**
 
 | Export | Description |
-|--------|-------------|
+| --- | --- |
 | `JwtAuthGuard` | The bearer-token guard. Registered globally by default; exported for per-route `@UseGuards`. |
 | `JwtAuthService` | `sign(payload, options?)` — issue a token via the configured `JwtService`. |
 | `@Public()` | Marks a route/controller as exempt from the guard. |
@@ -149,7 +143,7 @@ export class AdminController {}
 **Advanced & types**
 
 | Export | Description |
-|--------|-------------|
+| --- | --- |
 | `JWT_AUTH_OPTIONS` | DI token holding the resolved guard behavior. |
 | `resolveGuardOptions(behavior?)` | Merge behavior over the defaults → `ResolvedGuardOptions`. |
 | `defaultGetToken`, `defaultValidate` | The default `Bearer`-header extractor and identity validator. |
