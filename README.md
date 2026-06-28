@@ -12,7 +12,7 @@
 
 Bearer-token authentication for [NestJS](https://nestjs.com), built on the official [`@nestjs/jwt`](https://github.com/nestjs/jwt): a configurable guard, `@Public()`, and a token-issuance helper — wired with a single `forRoot()`.
 
-> **ESM-only.** Requires Node ≥ 20 and NestJS 10 / 11.
+> **[ESM](https://gist.github.com/onury/d3f3d765d7db2e8b2d050d14315f2ac7)-only.** Requires Node ≥ 20 and NestJS 10 / 11.
 >
 > This is the **bearer-token** half (verify + issue). For username/password login (user lookup + password hashing), pair it with the token-agnostic credentials companion (`nestjs-credentials`).
 
