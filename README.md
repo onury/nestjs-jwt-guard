@@ -130,10 +130,31 @@ export class AdminController {}
 
 ## API
 
-`JwtAuthModule` · `JwtAuthGuard` · `JwtAuthService` · `Public` / `IS_PUBLIC_KEY` ·
-`JWT_AUTH_OPTIONS` token · `resolveGuardOptions`, `defaultGetToken`, `defaultValidate` ·
-types `JwtAuthOptions`, `JwtAuthAsyncOptions`, `JwtAuthGuardBehavior`, `ResolvedGuardOptions`,
-`TokenExtractor`, `PayloadValidator`, `JwtPayload`, `AuthenticatedRequest`.
+**Module**
+
+| Export | Description |
+|--------|-------------|
+| `JwtAuthModule.forRoot(options)` | Configure `@nestjs/jwt` (via `jwt`) + the guard synchronously. See [Configuration](#configuration). |
+| `JwtAuthModule.forRootAsync(options)` | Build the `@nestjs/jwt` config from injected deps (`useFactory`). |
+
+**Enforcement & issuance**
+
+| Export | Description |
+|--------|-------------|
+| `JwtAuthGuard` | The bearer-token guard. Registered globally by default; exported for per-route `@UseGuards`. |
+| `JwtAuthService` | `sign(payload, options?)` — issue a token via the configured `JwtService`. |
+| `@Public()` | Marks a route/controller as exempt from the guard. |
+| `IS_PUBLIC_KEY` | The metadata key `@Public()` sets (for custom reflection). |
+
+**Advanced & types**
+
+| Export | Description |
+|--------|-------------|
+| `JWT_AUTH_OPTIONS` | DI token holding the resolved guard behavior. |
+| `resolveGuardOptions(behavior?)` | Merge behavior over the defaults → `ResolvedGuardOptions`. |
+| `defaultGetToken`, `defaultValidate` | The default `Bearer`-header extractor and identity validator. |
+| `JwtAuthOptions`, `JwtAuthAsyncOptions`, `JwtAuthGuardBehavior`, `ResolvedGuardOptions` | Option types. |
+| `TokenExtractor`, `PayloadValidator`, `JwtPayload`, `AuthenticatedRequest` | Supporting types. |
 
 ## Related Projects
 
