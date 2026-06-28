@@ -10,7 +10,7 @@
   <a href="https://github.com/onury/nestjs-jwt-guard/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat" alt="license" /></a>
 </p>
 
-**Passport-free** bearer-token authentication for [NestJS](https://nestjs.com), built on the official [`@nestjs/jwt`](https://github.com/nestjs/jwt): a configurable guard, `@Public()`, and a token-issuance helper — wired with a single `forRoot()`.
+Bearer-token authentication for [NestJS](https://nestjs.com), built on the official [`@nestjs/jwt`](https://github.com/nestjs/jwt): a configurable guard, `@Public()`, and a token-issuance helper — wired with a single `forRoot()`.
 
 > **ESM-only.** Requires Node ≥ 20 and NestJS 10 / 11.
 >
