@@ -152,9 +152,9 @@ export class AdminController {}
 
 ## Related Projects
 
-- [**nestjs-accesscontrol**](https://github.com/onury/nestjs-accesscontrol) — The official NestJS integration for AccessControl v3: RBAC + ABAC with fluent CRUD decorators and attribute filtering.
+- [**nestjs-accesscontrol**](https://github.com/onury/nestjs-accesscontrol) — The official NestJS integration for [AccessControl v3](https://github.com/onury/accesscontrol): RBAC + ABAC with fluent CRUD decorators and attribute filtering.
 - [**nestjs-http-envelope**](https://github.com/onury/nestjs-http-envelope) — A uniform, configurable response & error envelope for NestJS.
-- [**nestjs-configuard**](https://github.com/onury/nestjs-configuard) — The NestJS integration for configuard: DB-backed, typed, ABAC-filtered runtime config.
+- [**nestjs-configuard**](https://github.com/onury/nestjs-configuard) — The NestJS integration for [configuard](https://github.com/onury/configuard): DB-backed, typed, ABAC-filtered runtime config.
 - [**accesscontrol**](https://github.com/onury/accesscontrol) — Role & attribute-based access control (RBAC + ABAC) for Node.js.
 - [**configuard**](https://github.com/onury/configuard) — Turn flat config rows from a database table into a nested, typed configuration object.
 
